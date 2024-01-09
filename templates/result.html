@@ -1,0 +1,28 @@
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="charset" content="utf8">
+    <meta http-equiv="content-type" content="text/html;">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- connect main.css -->
+    <link rel="stylesheet" href="../templates/style.css">
+
+    <title>Resulting bracket</title>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <h1 class="accent">Fight {{fight_num}}</h1>
+      <table>
+        {% for item in items %}
+        <tr>
+           <td id="room-teams"><p class="accent" id="room-name">{{item.room_name}}</p>{% for team in item.teams %}{{team}}<br>{% endfor %}</td>
+           <td id="room-jurors"><p id="juror-chair">{{item.chair}}</p>{% for juror in item.jurors %}{{juror}}<br>{% endfor %}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+  </body>
+</html>

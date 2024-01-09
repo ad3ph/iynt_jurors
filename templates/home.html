@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <title>Jury schedule generator</title>
+</header>
+<body>
+    <h1>Jury schedule generator</h1>
+    <h2>Last called on: {{ last_mode }} for fight {{ last_fight_num }}</h2>
+    <form id="choose-mode" action="/run">
+        Choose mode
+        <select name="mode">
+            <option value="0">Create bracket before fight</option>
+            <option value="1">Update matrices after fight</option>
+        </select>
+        Choose fight number
+        <select name="fight_num">
+            {% for fight in fights %}
+                <option value="{{ fight.fight_num }}">{{ fight.fight_num }}</option>
+            {% endfor %}
+        </select>
+        <button type="run">Run</button>
+    </form>
+</body>
+</html>
