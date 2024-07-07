@@ -9,9 +9,11 @@ import colorama
 from colorama import Fore, Back, Style
 from src.resulting_bracket import Bracket
 from numpy import nan
+import os
 colorama.init(autoreset=True)
 
 TEAMS_LIST_FILE_NAME = './data/state/teams_list.pkl'
+TEAMS_LIST_DIR = Path(TEAMS_LIST_FILE_NAME).parents[0]
 
 class BaseDataHandler:
     def __init__(self, 
@@ -169,6 +171,7 @@ class FightData(BaseDataHandler):
         
         # Save teams before 1st fight, else check integrity 
         if self.number == 1:
+            TEAMS_LIST_DIR.mkdir(parents=True, exist_ok=True)
             with open(TEAMS_LIST_FILE_NAME, 'wb') as f:
                 pkl.dump(self.teams_list, f)
         

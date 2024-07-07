@@ -7,11 +7,12 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from .logger import Logger
 from .utils import exception_raiser
 import os
+from pathlib import Path
 
 GET_SAVE_STATE_PATH = './data/state/bracket_fight_{}.pkl'.format
 TEMPLATE_PATH = './templates'
 HTML_OUTPUT_PATH = './output'
-
+Path(HTML_OUTPUT_PATH).mkdir(parents=True, exist_ok=True)
 
 class Bracket:
     '''
