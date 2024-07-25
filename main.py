@@ -71,7 +71,7 @@ def create_bracket(fight_num: int):
                 key=lambda x: MeetsMatrix.sorter(x, jurors_met, bracket.rooms_list, obj_idx=3, importance=0.75, log=LOG, verbose=False) + room_filling_sorter(x, rooms_filling, log=LOG, verbose=False))
             if len(best_rooms):
                 bracket.add_juror_to_room(juror_name, best_rooms[0])
-            rooms_filling[best_rooms[0]] += 1
+                rooms_filling[best_rooms[0]] += 1
     
     bracket.show()
     
