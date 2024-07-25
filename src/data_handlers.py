@@ -110,7 +110,7 @@ class JurorsData(BaseDataHandler):
         if juror_name in self.db.index:
             self.log(f'Juror {juror_name} is not new')
             self.db.loc[juror_name, f'Fight_{fight_num}'] = 1
-            self._update_db_file('change presence')
+            self._update_db_file('change presence', (juror_name, fight_num))
 
         else:
             self.log(f'Juror {juror_name} is new')
