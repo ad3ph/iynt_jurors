@@ -45,8 +45,10 @@ data
 |  |-- ...
 |state
 |  |-- ...
+output
 ```
-You can use either csv or xlsx files. The xlsx files are recommended, because they are easier to edit and contain more information about the data structure.
+You can use either csv or xlsx files. The xlsx files are recommended, because they are easier to edit and contain more information about the data structure. 
+
 The `state` folder is maintained by the tool and contains the current state of the tournament. You can delete it at any time, but you will lose all the progress.
 
 # Usage
@@ -66,8 +68,13 @@ The jurors table must have the following structure:
 
 You can add jurors to the table before any fight.
 But you cannot remove them or change their name. If you want to remove a juror, just place 0 to the corresponding Fight_N presence cell.
+
 You can change the chairperson status of a juror before any fight.
+
 You can change the conflicts of a juror before any fight.
+
+Always make sure the CSV structure (spacing/tabbing, commas) is correct. Best practice is using Google Spreadsheets to create the tables and then downloading the tables as csv.
+
 
 ## Fights tables
 The fights tables describe the bracket for the tournament. They must have the following structure (the number of columns is 3 for YNT and 4 for YPT):

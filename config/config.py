@@ -8,4 +8,4 @@ class Settings(BaseSettings):
     state_folder: str|Path = Path("./data/state")
     last_state_file: str|Path = Path("./data/state/last_state.txt")
     
-    mode = 'iypt' # may be iynt or iypt. This affects the table printing
+    mode = 'iynt' # may be iynt or iypt. This affects the table printing
